@@ -17,7 +17,7 @@ const determineSubtestLevel = (
   }
 };
 
-const calculateConceptualIntuitiveIntellect = (grade, points) => {
+const calculateConceptualIntuitiveIntellect = (points, grade) => {
   if (grade === 7) {
     return determineSubtestLevel(points, 5, 8, 13);
   } else if (grade === 8) {
@@ -33,7 +33,7 @@ const calculateConceptualIntuitiveIntellect = (grade, points) => {
   }
 };
 
-const calculateConceptualLogicalIntellect = (grade, points, isMajor) => {
+const calculateConceptualLogicalIntellect = (points, grade, isMajor) => {
   if (grade === 7 && !isMajor) {
     return determineSubtestLevel(points, 3, 7, 12);
   } else if (grade === 7 && isMajor) {
@@ -53,7 +53,7 @@ const calculateConceptualLogicalIntellect = (grade, points, isMajor) => {
   }
 };
 
-const calculateConceptualCategorization = (grade, points, isMajor) => {
+const calculateConceptualCategorization = (points, grade, isMajor) => {
   if (grade === 7) {
     return determineSubtestLevel(points, 3, 7, 12);
   } else if (grade === 8) {
@@ -69,7 +69,7 @@ const calculateConceptualCategorization = (grade, points, isMajor) => {
   }
 };
 
-const calculateAbstractIntellect = (grade, points, isMajor) => {
+const calculateAbstractIntellect = (points, grade, isMajor) => {
   if (grade === 7) {
     return determineSubtestLevel(points, 4, 8, 13);
   } else if (grade === 8) {
@@ -89,7 +89,7 @@ const calculateAbstractIntellect = (grade, points, isMajor) => {
   }
 };
 
-const calculateMathematicalIntuition = (grade, points, isMajor) => {
+const calculateMathematicalIntuition = (points, grade, isMajor) => {
   if (grade === 7) {
     return determineSubtestLevel(points, 5, 8, 12);
   } else if (grade === 8) {
@@ -113,11 +113,11 @@ const calculateDynamicVisualIntellect = (points) => {
   return determineSubtestLevel(points, 7, 9, 11);
 };
 
-const calculateCombinatorialVisualIntellect = () => {
+const calculateCombinatorialVisualIntellect = (points) => {
   return determineSubtestLevel(points, 7, 9, 11);
 };
 
-const calculateAbstractVisualIntellect = (grade, points) => {
+const calculateAbstractVisualIntellect = (points, grade) => {
   if (grade === 7 || grade === 8) {
     return determineSubtestLevel(points, 5, 8, 10);
   } else {
@@ -125,7 +125,7 @@ const calculateAbstractVisualIntellect = (grade, points) => {
   }
 };
 
-const calculateFigurativeSynthesis = (grade, points, isMajor) => {
+const calculateFigurativeSynthesis = (points, grade, isMajor) => {
   if ((grade === 10 || grade === 11) && isMajor) {
     return determineSubtestLevel(points, 5, 10, 16);
   } else {
@@ -133,7 +133,7 @@ const calculateFigurativeSynthesis = (grade, points, isMajor) => {
   }
 };
 
-const calculateSpatialAnalysis = (grade, points, isMajor) => {
+const calculateSpatialAnalysis = (points, grade, isMajor) => {
   if (grade === 9 && isMajor) {
     return determineSubtestLevel(points, 6, 11, 18);
   } else if ((grade === 10 || grade === 11) && isMajor) {
@@ -151,7 +151,7 @@ const calculateImagination = (points) => {
   return determineSubtestLevel(points, 6, 9, 15);
 };
 
-const calculateAwareness = (grade, points, isMajor) => {
+const calculateAwareness = (points, grade, isMajor) => {
   if (isMajor) {
     switch (grade) {
       case 7:
@@ -190,7 +190,7 @@ const calculateEnglishReadingSkill = (points) => {
   return determineSubtestLevel(points, 4, 7, 9);
 };
 
-const calculateLogicalMemory = (grade, points) => {
+const calculateLogicalMemory = (points, grade) => {
   switch (grade) {
     case 7:
       return determineSubtestLevel(points, 9, 13, 16);
@@ -207,7 +207,7 @@ const calculateLogicalMemory = (grade, points) => {
   }
 };
 
-const calculateInformationProcessingSpeed = (grade, points) => {
+const calculateInformationProcessingSpeed = (points, grade) => {
   switch (grade) {
     case 7:
       return determineSubtestLevel(points, 36, 45, 57);
@@ -224,10 +224,49 @@ const calculateInformationProcessingSpeed = (grade, points) => {
   }
 };
 
-const calculateAttentiveness = (grade, points) => {
+const calculateAttentiveness = (points, grade) => {
   if (grade <= 8) {
     return determineSubtestLevel(points, 0.91, 0.95, 0.97);
   } else {
     return determineSubtestLevel(points, 0.92, 0.95, 0.97);
   }
 };
+
+const inputs = Array.from(document.querySelectorAll("ol input")).map(
+  (input) => input.value
+);
+console.log(inputs);
+
+const ops = [
+  calculateConceptualIntuitiveIntellect,
+  calculateConceptualLogicalIntellect,
+  calculateConceptualCategorization,
+  calculateAbstractIntellect,
+  calculateMathematicalIntuition,
+  calculateStructuralVisualIntellect,
+  calculateDynamicVisualIntellect,
+  calculateCombinatorialVisualIntellect,
+  calculateAbstractVisualIntellect,
+  calculateFigurativeSynthesis,
+  calculateSpatialAnalysis,
+  calculateDivergentIntellect,
+  calculateImagination,
+  calculateAwareness,
+  calculateRussianReadingSkill,
+  calculateEnglishReadingSkill,
+  calculateLogicalMemory,
+  calculateInformationProcessingSpeed,
+  calculateAttentiveness,
+];
+
+const grade = 8;
+const isMajor = true;
+
+const resultTable = document.getElementById("resultTable");
+const rows = resultTable.rows;
+
+ops.forEach((func, index) => {
+  let cells = rows[index + 2].cells;
+  console.log(cells);
+  cells[func(inputs[index], grade, isMajor) + 1].textContent = "+";
+});

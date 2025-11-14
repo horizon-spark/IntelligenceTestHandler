@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
+    <!-- <link rel="stylesheet" href="reset.css" /> -->
     <link rel="stylesheet" href="style.css" />
     <title>Обработка теста</title>
   </head>
@@ -68,6 +68,7 @@
                 id="conceptualIntuitiveIntellect"
                 min="0"
                 max="20"
+                value="1"
                 required
               />
             </p>
@@ -80,6 +81,7 @@
                 id="conceptualLogicalIntellect"
                 min="0"
                 max="20"
+                value="2"
                 required
               />
             </p>
@@ -92,6 +94,7 @@
                 id="conceptualCategorization"
                 min="0"
                 max="20"
+                value="3"
                 required
               />
             </p>
@@ -104,6 +107,7 @@
                 id="abstractIntellect"
                 min="0"
                 max="10"
+                value="4"
                 required
               />
             </p>
@@ -116,7 +120,7 @@
                 id="mathematicalIntuition"
                 min="0"
                 max="20"
-                структурны
+                value="5"
                 required
               />
             </p>
@@ -133,6 +137,7 @@
                       id="structuralVisualIntellect"
                       min="0"
                       max="12"
+                      value="6"
                       required
                     />
                   </p>
@@ -145,6 +150,7 @@
                       id="dynamicVisualIntellect"
                       min="0"
                       max="12"
+                      value="7"
                       required
                     />
                   </p>
@@ -157,6 +163,7 @@
                       id="combinatorialVisualIntellect"
                       min="0"
                       max="12"
+                      value="8"
                       required
                     />
                   </p>
@@ -169,6 +176,7 @@
                       id="abstractVisualIntellect"
                       min="0"
                       max="12"
+                      value="9"
                       required
                     />
                   </p>
@@ -181,6 +189,7 @@
                       id="figurativeSynthesis"
                       min="0"
                       max="20"
+                      value="10"
                       required
                     />
                   </p>
@@ -193,6 +202,7 @@
                       id="spatialAnalysis"
                       min="0"
                       max="20"
+                      value="11"
                       required
                     />
                   </p>
@@ -208,6 +218,7 @@
                 id="divergentIntellect"
                 min="0"
                 max="10"
+                value="12"
                 required
               />
             </p>
@@ -215,13 +226,27 @@
           <li>
             <p>
               <b>Воображение</b>
-              <input type="number" id="imagination" min="0" max="20" required />
+              <input
+                type="number"
+                id="imagination"
+                min="0"
+                max="20"
+                value="13"
+                required
+              />
             </p>
           </li>
           <li>
             <p>
               <b>Осведомленность, эрудиция</b>
-              <input type="number" id="awareness" min="0" max="20" required />
+              <input
+                type="number"
+                id="awareness"
+                min="0"
+                max="20"
+                value="14"
+                required
+              />
             </p>
           </li>
           <li>
@@ -232,6 +257,7 @@
                 id="russianReadingSkill"
                 min="0"
                 max="10"
+                value="15"
                 required
               />
             </p>
@@ -244,6 +270,7 @@
                 id="englishReadingSkill"
                 min="0"
                 max="10"
+                value="16"
                 required
               />
             </p>
@@ -256,6 +283,7 @@
                 id="logicalMemory"
                 min="0"
                 max="20"
+                value="17"
                 required
               />
             </p>
@@ -268,6 +296,7 @@
                 id="informationProcessingSpeed"
                 min="0"
                 max="100"
+                value="18"
                 required
               />
             </p>
@@ -281,6 +310,7 @@
                 id="attentiveness"
                 min="0.8"
                 max="1"
+                value="19"
                 required
               />
             </p>
@@ -288,8 +318,153 @@
         </ol>
       </form>
       <p>
-        <a href="test-output.html">Обработать результаты</a>
+        <button id="getResultButton">Обработать результаты</button>
       </p>
+      <table id="resultTable">
+        <tr>
+          <th rowspan="2">Способности</th>
+          <th colspan="4">Уровень выраженности</th>
+        </tr>
+        <tr>
+          <th>слабый</th>
+          <th>средний</th>
+          <th>хороший</th>
+          <th>высокий</th>
+        </tr>
+        <tr>
+          <td>Понятийное интуитивное мышление</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Понятийное логическое мышление</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Понятийная категоризация</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Абстрактное мышление</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Математическая интуиция</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Визуальный интеллект: структурный</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>динамический</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>комбинаторный</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>абстрактный</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>образный синтез</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>пространственный анализ</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Дивергентное мышление</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Воображение</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Осведомленность, эрудиция</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Навык чтения (русский язык)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Навык чтения (английский язык)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Оперативная логическая память</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Скорость переработки информации</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Внимательность</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </main>
     <script src="testProcessingScript.js"></script>
   </body>
