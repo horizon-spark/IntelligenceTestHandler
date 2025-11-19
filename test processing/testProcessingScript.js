@@ -232,11 +232,6 @@ const calculateAttentiveness = (points, grade) => {
   }
 };
 
-const inputs = Array.from(document.querySelectorAll("ol input")).map(
-  (input) => input.value
-);
-console.log(inputs);
-
 const ops = [
   calculateConceptualIntuitiveIntellect,
   calculateConceptualLogicalIntellect,
@@ -259,14 +254,34 @@ const ops = [
   calculateAttentiveness,
 ];
 
-const grade = 8;
-const isMajor = true;
+const getResultButton = document.getElementById("getResultButton");
+getResultButton.onclick = () => {
+  const inputs = Array.from(document.querySelectorAll("ol input")).map(
+    (input) => input.value
+  );
+  const grade = +document.getElementById("grade").value;
+  const isHumanitarian = document.getElementById("humanitarian").checked;
+  const isLinguistic = document.getElementById("linguistic").checked;
+  const isNatural = document.getElementById("natural").checked;
+  const isMathematical = document.getElementById("mathematical").checked;
+  const isCommon = document.getElementById("noSpecialization").checked;
 
-const resultTable = document.getElementById("resultTable");
-const rows = resultTable.rows;
+  const resultTable = document.getElementById("resultTable");
+  const rows = resultTable.rows;
 
-ops.forEach((func, index) => {
-  let cells = rows[index + 2].cells;
-  console.log(cells);
-  cells[func(inputs[index], grade, isMajor) + 1].textContent = "+";
-});
+  ops.forEach((func, index) => {
+    let cells = rows[index + 2].cells;
+    for (let i = 1; i < cells.length; i++) {
+      cells[i].textContent = "";
+    }
+    if (index === 3 || index === 4 || index === 9 || index === 10) {
+      cells[func(inputs[index], grade, isMathematical) + 1].textContent = "+";
+    } else if (index === 1 || index === 13) {
+      cells[func(inputs[index], grade, isHumanitarian) + 1].textContent = "+";
+    } else if (index === 2) {
+      cells[func(inputs[index], grade, isLinguistic) + 1].textContent = "+";
+    } else {
+      cells[func(inputs[index], grade) + 1].textContent = "+";
+    }
+  });
+};
