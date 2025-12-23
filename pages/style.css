@@ -1,107 +1,39 @@
-html {
-  font-size: 62.5%;
-}
 body {
-  font-size: 1.8rem;
-  height: 94vh;
-  background: linear-gradient(#dee4f0, #dde3f1);
-}
-a {
-  border-radius: 5px;
-}
-a:visited {
-  color: black;
-  font-style: italic;
-}
-a:hover {
-  background-color: rgb(136, 189, 136);
-  transition: 0.5s;
-}
-a:active {
-  background-color: beige;
-}
-p {
-  text-align: left;
-  text-indent: 3rem;
-}
-p::first-letter {
-  font-size: 2rem;
-}
-strong {
-  font-weight: 600;
-}
-.content {
   display: grid;
-  margin: auto;
-  margin-top: 5rem;
-  padding: 5vh;
-  padding-top: 2vh;
-  width: 80%;
-  height: 100%;
-  gap: 5%;
-  grid-template-rows: 20% 60% 10%;
-  background-color: #445f96;
-  border-radius: 10px;
-  overflow: scroll;
+  grid-template-areas:
+    "header header header"
+    "ads article nav"
+    "footer footer footer";
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-columns: 20% 1fr 20%;
+  grid-gap: 10px;
+  height: 100vh;
+}
+
+.header,
+.footer,
+.mainArticle,
+.navigation,
+div {
+  padding: 20px;
+  background: lightblue;
 }
 .header {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-area: header;
 }
-.hat {
-  display: grid;
-  grid-template-columns: 30vh 30vh;
-  margin: auto;
+
+.navigation {
+  grid-area: nav;
 }
-.horizontalMenu {
-  display: grid;
-  padding: 1vh;
-  text-align: center;
-  vertical-align: middle;
-  grid-template-columns: 12rem 12rem 12rem;
-  border-radius: 5px;
-  background-color: #bccef1;
+
+.mainArticle {
+  grid-area: article;
 }
-.mainContent {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  gap: 2%;
+
+.mainAds {
+  grid-area: ads;
 }
-.interactiveContent {
-  display: grid;
-  padding: 1vh;
-  grid-template-rows: 1fr 2fr;
-  border-radius: 5px;
-  background-color: #d2dbee;
-}
-.verticalMenu {
-  display: grid;
-  grid-template-rows: 20% 20%;
-}
-.verticalMenu a {
-  display: block;
-}
-.authorizationForm {
-  display: grid;
-  gap: 10%;
-  grid-template-columns: 60%;
-}
-.authorizationForm a {
-  display: block;
-  text-align: right;
-}
-.pageContent {
-  background-color: #f3f3fc;
-  padding: 1vh;
-  border-radius: 5px;
-  font-size: 2rem;
-  overflow: scroll;
-}
+
 .footer {
-  background-color: rgb(17, 20, 70);
-  border-radius: 20px;
-  padding: 1vh;
-}
-.footer p {
-  color: #9a9ac7;
+  grid-area: footer;
 }
