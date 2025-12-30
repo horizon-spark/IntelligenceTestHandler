@@ -8,19 +8,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
+    <div class="header block">
       <a href="./index.html">Главная</a>
       <a href="./about.html">О методике</a>
       <a href="https://www.center-psychology.ru/">Сайт автора методики</a>
+      <button
+        class="burger-btn"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
     </div>
-    <div class="navigation">
+    <div class="desktop-nav block">
       <p><a href="./login.html">Войти</a></p>
       <p><a href="./test-input.html">Обработать тест</a></p>
       <p><a href="./history.html">История</a></p>
     </div>
-    <div class="mainArticle">
+    <div class="mobile-nav block hidden">
+      <p><a href="./login.html">Войти</a></p>
+      <p>
+        <a href="./test-input.html">Обработать тест</a>
+      </p>
+      <p><a href="./history.html">История</a></p>
+    </div>
+    <div class="mainArticle block">
       <h3>Результаты тестирования:</h3>
-      <table>
+      <table class="resultTable">
         <tr>
           <th rowspan="2">Способности</th>
           <th colspan="4">Уровень выраженности</th>
@@ -32,70 +46,70 @@
           <th>Высокий</th>
         </tr>
         <tr>
-          <th>1. Физико-математические науки</th>
+          <td>1. Физико-математические науки</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>2. Естественные науки</th>
+          <td>2. Естественные науки</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>3. Гуманитарные науки</th>
+          <td>3. Гуманитарные науки</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>4. Общественные науки</th>
+          <td>4. Общественные науки</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>5. Программирование</th>
+          <td>5. Программирование</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>6. Экономика</th>
+          <td>6. Экономика</td>
+          <td>+</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7. Менеджмент</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>7. Менеджмент</th>
+          <td>8. Лингвистика</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>8. Лингвистика</th>
-          <td></td>
-          <td></td>
+          <td>+</td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <th>9. Инж.-конструкторская деятельность</th>
+          <td>9. Инж.-конструкторская деятельность</td>
           <td></td>
           <td></td>
-          <td></td>
+          <td>+</td>
           <td></td>
         </tr>
         <tr>
-          <th>10. Педагогика</th>
+          <td>10. Педагогика</td>
           <td></td>
           <td></td>
           <td></td>
@@ -103,7 +117,9 @@
         </tr>
       </table>
     </div>
-    <div class="mainAds">Реклама</div>
-    <div class="footer">Футер</div>
+    <div class="mainAds block">Реклама</div>
+    <div class="footer block">Футер</div>
+
+    <script src="script.js"></script>
   </body>
 </html>

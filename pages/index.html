@@ -8,18 +8,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
+    <div class="header block">
       <a href="./index.html">Главная</a>
       <a href="./about.html">О методике</a>
       <a href="https://www.center-psychology.ru/">Сайт автора методики</a>
+      <button
+        class="burger-btn"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
     </div>
-    <div class="navigation">
+    <div class="desktop-nav block">
       <p><a href="./login.html">Войти</a></p>
       <p><a href="./test-input.html">Обработать тест</a></p>
       <p><a href="./history.html">История</a></p>
     </div>
-    <div class="mainArticle">Содержимое страницы</div>
-    <div class="mainAds">Реклама</div>
-    <div class="footer">Футер</div>
+    <div class="mobile-nav block hidden">
+      <p><a href="./login.html">Войти</a></p>
+      <p>
+        <a href="./test-input.html">Обработать тест</a>
+      </p>
+      <p><a href="./history.html">История</a></p>
+    </div>
+    <div class="mainArticle block">Содержимое страницы</div>
+    <div class="mainAds block">Реклама</div>
+    <div class="footer block">Футер</div>
+
+    <script src="script.js"></script>
   </body>
 </html>
