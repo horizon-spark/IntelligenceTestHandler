@@ -37,11 +37,11 @@
       <form>
         <h4>Личная информация:</h4>
         <label for="name">Имя</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" value="Иван" />
         <label for="surname">Фамилия</label>
-        <input type="text" name="surname" id="surname" />
+        <input type="text" name="surname" id="surname" value="Иванов" />
         <label for="school">Школа</label>
-        <input type="text" name="school" id="school" />
+        <input type="text" name="school" id="school" value="Гимназия 9" />
         <fieldset>
           <legend>Выберите номер класса</legend>
           <label>
@@ -57,13 +57,13 @@
             <input type="radio" name="grade" required value="10" />10
           </label>
           <label>
-            <input type="radio" name="grade" required value="11" />11
+            <input type="radio" name="grade" required value="11" checked />11
           </label>
         </fieldset>
         <fieldset>
           <legend>Литера класса</legend>
           <label>
-            <input type="radio" name="letter" required value="A" />А
+            <input type="radio" name="letter" required value="A" checked />А
           </label>
           <label>
             <input type="radio" name="letter" required value="B" />Б
@@ -115,6 +115,7 @@
               name="specialization"
               required
               value="mathematical"
+              checked
             />Физико-математический
           </label>
           <label>
@@ -133,6 +134,7 @@
         <input
           type="number"
           id="conceptualIntuitiveIntellect"
+          name="conceptualIntuitiveIntellect"
           min="0"
           max="20"
           value="1"
@@ -144,6 +146,7 @@
         <input
           type="number"
           id="conceptualLogicalIntellect"
+          name="conceptualLogicalIntellect"
           min="0"
           max="20"
           value="2"
@@ -153,6 +156,7 @@
         <input
           type="number"
           id="conceptualCategorization"
+          name="conceptualCategorization"
           min="0"
           max="20"
           value="3"
@@ -162,6 +166,7 @@
         <input
           type="number"
           id="abstractIntellect"
+          name="abstractIntellect"
           min="0"
           max="10"
           value="4"
@@ -171,6 +176,7 @@
         <input
           type="number"
           id="mathematicalIntuition"
+          name="mathematicalIntuition"
           min="0"
           max="20"
           value="5"
@@ -181,6 +187,7 @@
         <input
           type="number"
           id="structuralVisualIntellect"
+          name="structuralVisualIntellect"
           min="0"
           max="12"
           value="6"
@@ -190,6 +197,7 @@
         <input
           type="number"
           id="dynamicVisualIntellect"
+          name="dynamicVisualIntellect"
           min="0"
           max="12"
           value="7"
@@ -199,6 +207,7 @@
         <input
           type="number"
           id="combinatorialVisualIntellect"
+          name="combinatorialVisualIntellect"
           min="0"
           max="12"
           value="8"
@@ -208,6 +217,7 @@
         <input
           type="number"
           id="abstractVisualIntellect"
+          name="abstractVisualIntellect"
           min="0"
           max="12"
           value="9"
@@ -217,6 +227,7 @@
         <input
           type="number"
           id="figurativeSynthesis"
+          name="figurativeSynthesis"
           min="0"
           max="20"
           value="10"
@@ -226,6 +237,7 @@
         <input
           type="number"
           id="spatialAnalysis"
+          name="spatialAnalysis"
           min="0"
           max="20"
           value="11"
@@ -235,15 +247,17 @@
         <input
           type="number"
           id="divergentIntellect"
+          name="divergentIntellect"
           min="0"
           max="10"
-          value="12"
+          value="9"
           required
         />
         <label for="imagination">Воображение</label>
         <input
           type="number"
           id="imagination"
+          name="imagination"
           min="0"
           max="20"
           value="13"
@@ -253,6 +267,7 @@
         <input
           type="number"
           id="awareness"
+          name="awareness"
           min="0"
           max="20"
           value="14"
@@ -262,24 +277,27 @@
         <input
           type="number"
           id="russianReadingSkill"
+          name="russianReadingSkill"
           min="0"
           max="10"
-          value="15"
+          value="8"
           required
         />
         <label for="englishReadingSkill">Навык чтения (английский язык)</label>
         <input
           type="number"
           id="englishReadingSkill"
+          name="englishReadingSkill"
           min="0"
           max="10"
-          value="16"
+          value="8"
           required
         />
         <label for="logicalMemory">Оперативная логическая память</label>
         <input
           type="number"
           id="logicalMemory"
+          name="logicalMemory"
           min="0"
           max="20"
           value="17"
@@ -291,6 +309,7 @@
         <input
           type="number"
           id="informationProcessingSpeed"
+          name="informationProcessingSpeed"
           min="0"
           max="100"
           value="18"
@@ -301,17 +320,19 @@
           type="number"
           step="any"
           id="attentiveness"
+          name="attentiveness"
           min="0.8"
           max="1"
-          value="19"
+          value="0.9"
           required
         />
-        <a href="test-output.html">Обработать результаты</a>
+        <button type="submit">Обработать результаты</button>
       </form>
     </div>
     <div class="mainAds block">Реклама</div>
     <div class="footer block">Футер</div>
 
-    <script src="script.js"></script>
+    <script src="scripts/burgerMenu.js"></script>
+    <script src="scripts/testProcessing.js" type="module"></script>
   </body>
 </html>
